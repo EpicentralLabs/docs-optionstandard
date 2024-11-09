@@ -20,7 +20,13 @@ export default defineConfig({
       copyright: 'Copyright © 2024 Epicentral Labs'
     },
     nav: [
-      { text: 'Home', link: '/' }
+      { text: 'Home', link: '/' },
+      {
+        text: 'Options Standard SDK',
+        items: [
+          { text: 'Option Programs', link: '/introduction/the-option-standard/#option-programs' }
+        ]
+      }
     ],
 
     sidebar: [
@@ -28,7 +34,47 @@ export default defineConfig({
         text: 'Solana Options Standard',
         items: [
           { text: 'Options on Solana', link: '/introduction/options-on-solana' },
-          { text: 'The Option Standard SDK', link: '/introduction/the-option-standard' }
+          {
+            text: 'The Option Standard SDK',
+            link: '/introduction/the-option-standard',
+            collapsed: false,
+            items: [
+              {
+                text: 'Option Programs',
+                link: '/introduction/the-option-standard/#option-programs',
+                collapsed: true,
+                items: [
+                  { text: 'option_create', link: '/introduction/the-option-standard/#option_create' },
+                  { text: 'option_exercise', link: '/introduction/the-option-standard/#option_exercise' },
+                  { text: 'option_assign', link: '/introduction/the-option-standard/#option_assign' },
+                  { text: 'option_execute', link: '/introduction/the-option-standard/#option_execute' }
+                ]
+              },
+              { text: 'Calculation Modules', 
+                link: '/introduction/the-option-standard/#calculation-modules',
+                collapsed: true,
+                items: [
+                  { text: 'Option Greeks', 
+                    link: '/introduction/the-option-standard/#option-greeks',
+                    collapsed: true,
+                    items: [
+                      { text: 'calc_delta', link: '/introduction/the-option-standard/#calc_delta' },
+                      { text: 'calc_gamma', link: '/introduction/the-option-standard/#calc_gamma' },
+                      { text: 'calc_theta', link: '/introduction/the-option-standard/#calc_theta' },
+                      { text: 'calc_vega', link: '/introduction/the-option-standard/#calc_vega' },
+                      { text: 'calc_rho', link: '/introduction/the-option-standard/#calc_rho' }
+                    ]
+                  },
+                  { text: 'Implied Volatility (IV)', link: '/introduction/the-option-standard/#implied-volatility-iv',
+                    collapsed: true,
+                    items: [
+                      { text: 'impl_vol', link: '/introduction/the-option-standard/#impl_vol' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       {
